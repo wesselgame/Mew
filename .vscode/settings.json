@@ -1,0 +1,70 @@
+{
+  // Window settings.
+  "window.zoomLevel": 1,
+  // Editor settings.
+  "eslint.enable": true,
+  "editor.tabSize": 2,
+  "editor.fontSize": 12,
+  "editor.wordWrap": "off",
+  "editor.lineHeight": 20,
+  "editor.fontFamily": "'SFMono-Regular','Consolas','Liberation Mono','Menlo','Courier','monospace'",
+  "editor.cursorStyle": "line",
+  "editor.cursorWidth": 0,
+  "editor.insertSpaces": true,
+  "editor.matchBrackets": true,
+  "editor.tabCompletion": true,
+  "editor.fontLigatures": true,
+  "editor.smoothScrolling": true,
+  "editor.minimap.enabled": true,
+  "editor.renderWhitespace": "none",
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.autoClosingBrackets": true,
+  "editor.tokenColorCustomizations": {
+    "types": "#C59F61",
+    "strings": "#F6EB90",
+    "numbers": "#C54121",
+    "keywords": "#C59F49",
+    "comments": "#6a737d",
+    "variables": "#C55F45",
+    "functions": "#C59F55"
+  },
+  //Workbench settings.
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorTheme": "Material Theme Palenight", 
+  "workbench.editor.tabSizing": "fit",
+  "workbench.sideBar.location": "left",
+  // Debug settings.
+  "debug.toolBarLocation": "floating",
+  "debug.allowBreakpointsEverywhere": true,
+  // Console settings.
+  "eslint.packageManager": "yarn",
+  "terminal.integrated.shell.windows": "C:\\Windows\\System32\\bash.exe", // C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe
+  // File settings.
+  "files.autoSave": "off",
+  "files.exclude": {
+    "**/.git": false,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true
+  },
+  "files.associations": {},
+  // Git settings.
+  "git.enableSmartCommit": true,
+  "git.ignoreLimitWarning": true,
+  // Editing settings.
+  "[yaml]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": false
+  },
+  "[json]": {
+    "editor.quickSuggestions": {
+      "strings": true
+    }
+  },
+  "[markdown]": {
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": false
+  }
+}

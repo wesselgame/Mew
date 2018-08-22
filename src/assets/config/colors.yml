@@ -1,0 +1,10 @@
+ERROR: 0xff0000 # Red
+COOLDOWN: 0xffa500 # Orange 
+STARBOARD: 0xffd700 # Gold
+REDDIT_FEED: 0xff4301 # Red-orange
+GENERAL_PING:
+  0: 0x00FF00 # Green
+  1: 0x00FF00 # Green
+  2: 0xffa500 # Orange
+  3: 0xff0000 # Red
+GENERAL_SNIPE: 0x000000 # Black

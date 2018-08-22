@@ -1,0 +1,7 @@
+src/tmp/
+src/archives/
+src/node_modules/
+
+.git/
+.github/
+.vscode/
