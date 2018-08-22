@@ -13,7 +13,7 @@ Credits
       The [Node-Fetch](https://github.com/bitinn/node-fetch) module
     * [Moment](https://github.com/moment):<br/>
       The [Moment](https://github.com/moment/moment) module
-    * [Felix Böhm](https://github.com/fb55)
+    * [Felix Böhm](https://github.com/fb55):<br/>
       The [Entities](https://github.com/fb55/entities) module (Minified in **deps/entities**)
     * [Marak](https://github.com/Marak) and [DABH](https://github.com/DABH):<br/>
       The [Colors](https://github.com/Marak/colors.js) module (Minified in **deps/colors**)
