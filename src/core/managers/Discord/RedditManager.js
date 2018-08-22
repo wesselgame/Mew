@@ -21,7 +21,6 @@ class RedditManager {
    * @description Start reddit feeds
    */
   constructor(bot, url, guild) {
-    super();
 
     this.url = url ? url : undefined;
     this.bot = bot ? bot : undefined;
