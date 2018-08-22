@@ -1,6 +1,6 @@
 <p align="center">
   <img src="src/assets/img/logo-cropped.png">
-  <h1 style="text-align:center">Mew - A discord bot ^-^</h1>
+  <h1>Mew - A discord bot ^-^</h1>
 </p>
 
 [![Discord](https://discordapp.com/api/guilds/107131083958538240/embed.png)](https://discord.gg/SV7DAE9) [![Donate on Patreon](https://img.shields.io/badge/patreon-donate-orange.svg)](https://patreon.com/wessel)
