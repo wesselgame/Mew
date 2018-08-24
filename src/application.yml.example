@@ -13,13 +13,14 @@
 #  https://discord.gg/SV7DAE9 for support #
 ###########################################
 
-ua: Mew/0.0.1/Clone # The User-Agent to use for requests
+ua: Mew/0.1.0/Clone # The User-Agent to use for requests
 debug: 1 # The debugging level
-version: 0.0.1 # The version of mew
+version: 0.1.0 # The version of mew
 nightly: false # Using the nightly version or not
 ratelimit: 5000 # Ratelimit inbetween requests
 
 db: mongodb://127.0.0.1:27017/mew # The link to the DB (mongo)
+
 Discord:
   token: YOUR_TOKEN_HERE # Your bot's discord token
   prefix: '!' # The default prefix
@@ -51,3 +52,24 @@ Discord:
     sharddisconnect: true
     messagereactionadd: true
     messagereactionremove: true
+
+PlugDJ:
+  enabled: false # To connect to PlugDJ or not
+  
+  mail: YOUR_MAIL_HERE # E-mail to login with
+  pass: YOUR_PASS_HERE' # Password to login with
+  room: 'wesselgame' # Room to join
+  prefix: '!' # The default prefix
+  op: # Users that can use restricted commands
+    - '6522606'
+  autoplay:
+    enabled: true # Enable/disable autoplay
+    playlists: # The playlists to pick from
+      - '[Jazzy] Autoplay #1 🎧'
+      - '[Chill] Autoplay #1 🎧'
+  Commands: # Enable/disable commands
+    ping: true
+  Events: # Enable/Disable events
+    chat: true
+    advance: true
+    waitlistupdate: true

@@ -8,3 +8,5 @@ GENERAL_PING:
   2: 0xffa500 # Orange
   3: 0xff0000 # Red
 GENERAL_SNIPE: 0x000000 # Black
+
+DEVELOPER_EVAL: 0x00FF00 # Green

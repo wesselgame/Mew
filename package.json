@@ -2,13 +2,14 @@
   "name": "mew",
   "displayName": "Mew",
   "main": "src/mew.js",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "license": "GPL-3.0",
   "description": "A discord bot ^-^",
   "engines": { "node": ">=8.0" },
   "dependencies": {
     "eris": "^0.9.0",
     "js-yaml": "^3.12.0",
+    "miniplug": "^2.0.2",
     "moment": "^2.22.2",
     "mongoose": "^5.2.9",
     "node-fetch": "^2.2.0"

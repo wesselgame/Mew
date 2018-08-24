@@ -1,5 +1,5 @@
 /**
- * @name Mew#Core:Client
+ * @name Mew#Core:DiscordClient
  * @author Wessel Tip <discord@go2it.eu>
  * @license GPL-3.0 
  */
@@ -18,9 +18,9 @@ const util = require('../../util/Util');
 const Collection = require('../../util/Collection');
 const PermissionUtil = require('../../util/PermissionUtil');
 
-class Mew extends Eris {
+class MewDiscord extends Eris {
   /**
-   * @name MewClient
+   * @name MewClient#Discord
    * @param {Object} options - The options for the client to use
    * @returns {Object} MewClient - The client that has been created
    * @description Create an instance of mew
@@ -52,7 +52,7 @@ class Mew extends Eris {
   }
 
   /**
-   * @name MewClient#launch
+   * @name MewClient#LaunchDiscord
    * @param {String} events - The directory of all events
    * @param {String} commands - The directory of all commands
    * @returns {Object} MewClient - The client that has been created
@@ -69,7 +69,7 @@ class Mew extends Eris {
     // Connect the client to discord
     this.connect()
       .then(async() => {
-      this.print(1, `[${cyan('Master')}]   >> Connecting shards to websockets`);
+      this.print(1, `[${cyan('Discord')}]  >> Connecting shards to websockets`);
       
       // Set reddit feeds
       const stream = await this.m.connection.collection('srv').find({ 'reddit.enabled': true }).stream();
@@ -81,7 +81,7 @@ class Mew extends Eris {
   }
   
   /**
-   * @name MewClient#op
+   * @name MewClient#OpDiscord
    * @param {String} UserID - The user ID to check
    * @returns {Boolean} OP - True if the user has permissions
    * @description Check if someone has permissions to execute
@@ -90,7 +90,7 @@ class Mew extends Eris {
   op(id) { return this.conf['Discord'].op.includes(id); }
   
   /**
-   * @name MewClient#GatherInvite
+   * @name MewClient#GatherInviteDiscord
    * @param {String} permission - The permissions to fetch
    * @returns {String} inviteLink - The resolved invite link
    * @description Returns an invite link with the given permissions.
@@ -101,7 +101,7 @@ class Mew extends Eris {
   }
   
   /**
-   * @name MewClient#destroy
+   * @name MewClient#DestroyDiscord
    * @param {Integer} code - the exit code
    * @returns {Object} trace - the destroy callback
    * @description Destroys the client and exits all connected
@@ -109,7 +109,7 @@ class Mew extends Eris {
    */
   destroy(code = 0) {
     let trace = { success: false, code: code };
-    this.print(1, `[${cyan('Master')}]   >> Disconnecting shards from websockets`);
+    this.print(1, `[${cyan('Discord')}]  >> Disconnecting shards from websockets`);
     try {
       this.disconnect({ reconnect: false });
       trace.success = true;
@@ -122,9 +122,9 @@ class Mew extends Eris {
         stack: err.stack
       };
     }
-    this.print(1, `[${cyan('Master')}]   >> Destroy callback - ${red(trace)}`);
+    this.print(1, `[${cyan('Discord')}]  >> Destroy callback - ${red(trace)}`);
     process.exit(trace.code);
   }
 };
 
-module.exports = Mew;
+module.exports = MewDiscord;

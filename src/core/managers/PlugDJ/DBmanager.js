@@ -6,9 +6,9 @@
 
 const mongoose = require('mongoose');
 const { print } = require('../../../util/Util');
-const { cyan, green, red } = require('../../../deps/colors');
+const { blue, green, red } = require('../../../deps/colors');
 
-const schemas = require('../../structures/Discord/DBschemas');
+const schemas = require('../../structures/PlugDJ/DBschemas');
 
 class DBmanager {
   /**
@@ -31,13 +31,13 @@ class DBmanager {
     mongoose.Promise = global.Promise;
     mongoose.schemas = schemas;
 
-    print(1, `[${cyan('Discord')}]  >> Connecting to ${green(uri)}`);
+    print(1, `[${blue('PlugDJ')}]   >> Connecting to ${green(uri)}`);
     mongoose.connect(uri, { useNewUrlParser: true });
 
-    mongoose.connection.on('connected', () => print(1, `[${cyan('Discord')}]  >> Connected to ${green(uri)}`));
+    mongoose.connection.on('connected', () => print(1, `[${blue('PlugDJ')}]   >> Connected to "${green(uri)}"`));
     mongoose.connection.on('error', (err) => {
-      print(1, `[${cyan('Master')}] !! ConnectionError - ${red(`${err.message}\n${err.stack}`)}`);
-      process.exit(500);
+      print(1, `[${blue('PlugDJ')}]   !! ConnectionError - ${red(`${err.message}\n${err.stack}`)}`);
+      process.exit(1);
   });
     this.db = mongoose;
     return mongoose;
@@ -51,7 +51,7 @@ class DBmanager {
    */
   destroy(code = 0) {
     let trace = { success: false, code: code };
-    print(1, `[${cyan('Discord')}]  >> Disconnecting from database`);
+    print(1, `[${blue('PlugDJ')}]   >> Disconnecting from database`);
     try {
       mongoose.connection.close(() => {
         trace.success = true;
@@ -65,7 +65,7 @@ class DBmanager {
         stack: err.stack
       };
     }
-    print(1, `[${cyan('Discord')}]  >> Destroy callback - ${red(trace)}`);
+    print(1, `[${blue('PlugDJ')}]   >> Destroy callback - ${red(trace)}`);
   }
 };
 

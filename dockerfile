@@ -13,7 +13,7 @@ EXPOSE 28017
 
 FROM node:8
 LABEL name "Mew: A discord bot"
-LABEL version "0.0.1"
+LABEL version "0.1.0"
 LABEL maintainer "Wesselgame (Wessel Tip) <discord@go2it.eu>"
 COPY package*.json .
 COPY yarn*.lock *

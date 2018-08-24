@@ -21,7 +21,6 @@ class RedditManager {
    * @description Start reddit feeds
    */
   constructor(bot, url, guild) {
-    super();
 
     this.url = url ? url : undefined;
     this.bot = bot ? bot : undefined;
@@ -67,7 +66,7 @@ class RedditManager {
     if (reddit) {
       intervals[channelId] = setInterval(async() => {
         const req = await fetch(`${this.url}/new.json?limit=1`, this.fetchOptions);
-        const res = await req.json();
+        const res = await req.json().catch((err) => { return; });;
 
         for (let i = 0; i < res.data.children.reverse().length; i++) {
           const post = res.data.children.reverse()[i].data;
@@ -75,12 +74,13 @@ class RedditManager {
           if (!dates[channelId] || post.created_utc > dates[channelId].last) {
             dates[channelId] = { last: post.created_utc };
             if (post.over_18) return;
+
             const message = await this.bot.createMessage(channelId, {
               embed: {
                 url: `https://redd.it/${post.id}`,
                 title: `${post.link_fair_text ? `[${post.link_flair_text}] ` : ''}${decodeHTML(post.title)}`,
                 color: this.bot.col['REDDIT_FEED'],
-                image: { url: isUri(post.thumbnail) ? decodeHTML(post.thumbnail) : null },
+                image: { url: isUri(post.url) ? decodeHTML(post.url) : null },
                 description: `${post.is_self ? decodeHTML(post.selftext.length > 253 ? post.selftext.slice(0, 253).concat('...') : post.selftext) : ''}`,
                 
                 footer: {
@@ -89,7 +89,7 @@ class RedditManager {
                 },
                 timestamp: new Date(post.created_utc * 1000)
               }
-            }).catch((err) => { return this.endfeed(channelId); });
+            }).catch((err) => { return; });
             if (emoji && message) await message.addReaction(emoji).catch(() => { return; });
           }
           dates[channelId] ? ++dates[channelId].last : undefined;

@@ -5,7 +5,7 @@
  */
 
 const { readdirSync } = require('fs');
-const { green, red, cyan } = require('../../../deps/colors');
+const { green, red, blue } = require('../../../deps/colors');
 
 class EventStore {
   /**
@@ -29,7 +29,7 @@ class EventStore {
       try {
         await event.execute(...args);
       } catch(err) {
-        this.bot.print(1, `[${cyan('Master')}] !! EventError - ${red(`${err.message}\n${err.stack}`)}`);
+        this.bot.print(1, `[${blue('PlugDJ')}]   !! EventError - ${red(`${err.message}\n${err.stack}`)}`);
       }
     };
 
@@ -44,12 +44,12 @@ class EventStore {
    */
   async run(dir) {
     const files = await readdirSync(dir);
-    this.bot.print(1, `[${cyan('Discord')}]  >> Loading ${green(files.length)} events`);
+    this.bot.print(1, `[${blue('PlugDJ')}]   >> Loading ${green(files.length)} events`);
     files.forEach((f) => {
       const evt = new(require(`${dir}/${f}`))(this.bot);
       
-      if (!this.bot.conf['Discord']['Events'][evt.event.toLowerCase()]) return;
-      this.bot.print(2, `[${cyan('Discord')}]  >> Loaded event ${green(evt.event)}`);
+      if (!this.bot.conf['PlugDJ']['Events'][evt.event.toLowerCase()]) return;
+      this.bot.print(2, `[${blue('PlugDJ')}]   >> Loaded event "${green(evt.event)}"`);
 
       this.doEvent(evt);
     });

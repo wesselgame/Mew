@@ -13,21 +13,21 @@ class MewCommand {
 
     enabled = true,
     hidden = false,
-    cooldown = 1,
     category = 'General',
+    guildOnly = false,
     ownerOnly = false,
     permissions = []
   }) {
     this.bot = bot;
     this.options = {
       name, description, syntax,
-      aliases, category, ownerOnly,
-      enabled, cooldown, hidden,
+      aliases, category, guildOnly,
+      ownerOnly, enabled, hidden,
       permissions
     };
   }
 
-  async execute(ctx, args, guild) {}
+  async execute(ctx, args, guild, user) {}
 };
 
 module.exports = MewCommand;

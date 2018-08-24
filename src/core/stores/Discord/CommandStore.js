@@ -6,7 +6,7 @@
 
 const date = new Date();
 const { readdir, readdirSync } = require('fs');
-const { cyan, red, green, yellow, magenta } = require('../../../deps/Colors');
+const { cyan, red, green, yellow, magenta } = require('../../../deps/colors');
 
 const Context = require('../../structures/Discord/Context');
 const Collection = require('../../../util/Collection');
@@ -36,7 +36,7 @@ class CommandStore {
     for (let i = 0; i < categories.length; i++) {
       readdir(`${dir}/${categories[i]}`, (err, files) => {
         if (err) this.bot.print(1, `[${cyan('Master')}] !! LoadError - ${red(`${err.message}\n${err.stack}`)}`);
-        this.bot.print(1, `[${cyan('Master')}]   >> Loading ${green(files.length)} commands in category ${green(categories[i])}`);
+        this.bot.print(1, `[${cyan('Discord')}]  >> Loading ${green(files.length)} commands in category ${green(categories[i])}`);
         files.forEach((file) => {
           try {
             this.start(dir, categories[i], file);
@@ -63,7 +63,7 @@ class CommandStore {
     
     if (this.bot.cmds.has(cmd.options.name)) this.bot.print(1, `[${cyan('Master')}] !! Duplicate command found - ${red(`${dir}/${category}/${file}`)}`);
     this.bot.cmds.set(cmd.options.name, cmd);
-    this.bot.print(2, `[${cyan('Master')}]   >> Loaded command ${green(cmd.options.name)}`);
+    this.bot.print(2, `[${cyan('Discord')}]  >> Loaded command ${green(cmd.options.name)}`);
   }
 
   reloadCommand(command) {
