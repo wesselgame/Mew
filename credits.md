@@ -1,6 +1,6 @@
 Credits
 =======
-  - Mew v0.0.1
+  - Mew v0.1.0
     * [Wessel Tip](https://github.com/PassTheWessel):<br/>
       All the current code</br>
     * [Abal](https://github.com/abalabahaha):<br/>
