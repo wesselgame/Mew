@@ -15,7 +15,7 @@ class Snipe extends BaseCommand {
       syntax: 'snipe',
       aliases: [ 's' ],
       permissions: [ 'embedLinks' ],
-      description: 'Re-post the latest deleted ctxsage',
+      description: 'Re-post the latest deleted message',
 
       enabled: true,
       hidden: false,
@@ -27,7 +27,7 @@ class Snipe extends BaseCommand {
 
   async execute(ctx) {
     const message = this.bot.cache.get(`${ctx.channel.id}-SNIPES`);
-    if (!message) return ctx.send(`${this.bot.ico['GENERAL_SNIPE']['0']} ${ctx.author.mention}, I couldn't snipe any ctxsages`);
+    if (!message) return ctx.send(`${this.bot.ico['GENERAL_SNIPE']['0']} ${ctx.author.mention}, I couldn't snipe any messages`);
 
     structure = {
       author: {
